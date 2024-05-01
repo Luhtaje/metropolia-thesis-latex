@@ -3,4 +3,75 @@
 \vspace{21.5pt}
 \chapter{Project Specifications}
 
-Check Final Year Project Guide for the content of Project Specifications chapter.
+The programming space is like a pyramid that relies on existing layers upon layers for developers to utilise and build amazing things without having to start from scratch or worry about implementation details <[TODO]insert reference of interface programming>. Therefore this field is filled with tradition, expectations and unspoken rules that are implicitly inherited when coding or studying. At the same time, much like all things on the internet, it is very chaotic and the user is always responsible for verifying the validity of the product they are consuming.
+
+This project tries aims to act as much as possible like a \gls{stl} container so that developers that are familiar with the C++ programming language could use it with ease and know what it does without referencing the documentation. To achieve this goal the project adheres to two sets of requirements.
+
+-  The \gls{stl} container requirements and all its sub-requirements
+
+-  The requirements set by the case company.
+
+Although some of the individual points of both sets overlap, they are different by purpose. The \gls{stl} requirements specify what a container is and how it can be used, and the company requirements tilts more into performance and details of implementation.
+
+\subsection{Case company requirements}
+
+The case company has required the product the fulfill these requirements 
+
+\begin{table}[h]
+  \centering
+  \caption{Requirements by the case company}%IMPORTANT the caption must be before the tabular, so it will be on top of the table (there are other tricks to force it on top; but this one is straightforward).
+  \vspace{-16.5pt}%time to time, spacing between caption and table can go too big...
+  \begin{tabular}{| 
+  >{\centering\arraybackslash}p{.20\textwidth} | 
+  >{\centering\arraybackslash}p{.20\textwidth} | 
+  >{\centering\arraybackslash}p{.20\textwidth} | 
+  >{\centering\arraybackslash}p{.20\textwidth} |}
+    \hline
+    Requirement & Description & Rationale & Validation  \\
+    \hline
+    C++14 Compliance &  The ring buffer must be implemented using C++14 standards. & Ensures compatibility with C++ features and environments. & Code review and compilation tests \\
+    \hline
+    \gls{stl} Compatibility & Must satisfy \gls{stl} named container requirements. & Allows integration with other \gls{stl} containers
+    and algorithms & Test suite \\
+    \hline 
+    Class template & Container must be a class template. & Allows the container to hold any data type. & Test suite \\
+    \hline 
+    Container adapter support & Must satisfy requirements imposed by \gls{stl} queue, stack and priority\_queue & Allows adapter integration into the container. & Test suite \\
+    \hline
+    Constant time operations &  Support constant time move, swap and access operations. & Critical for performance in real-time systems. & Performance benchmarks and profiling. \\
+    \hline
+    Bidirectional iteration & Must support constant and non-constant iteration forwards and backwards. & Required for general algorithms and usage.[TODO] & Test suite \\
+    \hline
+    \gls{lrai} support & Iterators must satisfy \gls{lrai} requirements. & Required for iterative algorithms & Test suite \\
+    \hline
+    Amortized constant time insertion and removal & Must support amortized constant time insertion and removal at both ends of the buffer & Performance benchmakrs and profiling.\\
+    \hline
+    
+  \end{tabular}
+  \label{table:some_data}
+\end{table}
+
+The ring buffer shall be written in C++14. \\
+The ring buffer shall be an STL compatible container.\\
+The ring buffer shall be a template class, taking the contained element type as a template parameter.\\
+The ring buffer shall satisfy the requirements imposed by the container adaptors std::queue, std::stack, and std::priority\_queue.\\
+The ring buffer shall support constant time move construction, move assignment, and swapping.\\
+The ring buffer shall support constant and non-constant iteration (logically) forwards and backwards.\\
+The ring buffer iterators shall satisfy the requirements of LegacyRandomAccessIterator.\\
+The member function size() shall return the number of elements in the ring buffer in constant time.\\
+The member function empty() shall return whether the ring buffer lacks elements in constant time.\\
+The member function data() shall return a pointer to the logically and physically first element of a physically contiguous sequence \\containing all the elements of the ring buffer in linear time.
+The ring buffer shall support amortized constant time insertion and removal of elements at both logical ends of the buffer.\\
+The ring buffer shall never overwrite an existing element.\\
+The ring buffer shall support constant time element access with and without bounds checking.\\
+The ring buffer shall not initialize nor in any way manipulate element slots that reside logically outside the ring buffer.\\
+Each member variable, function, parameter, return value, precondition, postcondition, side effect, exception, and exception safety \\guarantee shall be documented.
+The ring buffer shall be deployable in commercial software without restrictions.\\
+Each testable requirement shall have a test.\\
+The ring buffer shall be benchmarked for time and memory usage in differing use cases against suitable implementations of std::vector, \\std::deque, and std::list, where applicable.
+
+%Bridge to second chapter
+Although some of the individual points of both sets overlap, they are different by purpose. The requirements set a clear goal for the project, but as in programming in general, there are multiple ways of reaching the goal and not all roads are made equal. 
+
+
+These requirements not only act as testable milestones for the development of the project, but also as a reference for learning via the design science methodology.

@@ -2,4 +2,10 @@
 
 \chapter{Introduction}
 
-Check Final Year Project Guide for the content of introduction chapter.
+As technology integrates more thoroughly in to our everyday lives, efficient data storage and and handling is in a crucial role for any high performance application. In C++ programming language the \gls{stl} provides efficient and robust solutions to store and access data. However, the diverse landscape of software systems sometimes poses unique problems that require specialized data structures.
+
+The goal of this project was to provide a specialized tool for handling data streams, one that is more flexible and efficient compared to existing solutions. This work describes the design and implementation of a dynamic ring buffer in relation to other \gls{stl} containers. This container does not only adhere to the case company's requirements but satisfies the requirements set by the \gls{stl} for containers and additionally combines both \gls{fifo} and \gls{lifo} features within a single structure.  The primary difference from pre-existing solutions is the ability to dynamically change its capacity to accommodate fluctuating data volumes.
+
+The case company specialises in automotive \gls{hmi} development tools, with their market leading product that offers both a design and editing tool and a runtime environment for automotive \gls{ui}. The dynamic ring buffer developed in this thesis is meant to provide a capable and flexible solution for varying data loads while maintaining fast basic operations. Handling varying high volume data streams efficiently is mandatory in an environment where performance and memory is limited.
+
+The beginning of this thesis is dedicated to exploring the existing solutions and landscape of the problem, which is followed by the used technologies and implementation details about the container itself. At the end this will all be summarized alongside pure benchmark data comparing the solution to \gls{stl} containers and providing conclusive notes.
